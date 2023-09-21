@@ -1,0 +1,689 @@
+{
+	"info": {
+		"_postman_id": "6cf8797e-37cc-4624-84ea-71c874fd19f0",
+		"name": "surveys-app",
+		"description": "Documentation for the surveys app API.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10963175"
+	},
+	"item": [
+		{
+			"name": "Bonus",
+			"item": [
+				{
+					"name": "Upload Image",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"imageUrl\": \"https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/upload",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"upload"
+							]
+						},
+						"description": "This Protected API endpoint allows you to upload an image on the server and get a resized (50x50) image in return, hosted on the server filesystem."
+					},
+					"response": []
+				}
+			],
+			"description": "Documentation for the bonus endpoints."
+		},
+		{
+			"name": "Convenient",
+			"item": [
+				{
+					"name": "Get All Surveys",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/surveys",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"surveys"
+							]
+						},
+						"description": "This Protected API endpoint allows you to fetch all surveys."
+					},
+					"response": [
+						{
+							"name": "Get All Surveys",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/surveys",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"surveys"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Tue, 19 Sep 2023 04:29:03 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "CF-Ray",
+									"value": "808f15dbaebce62e-DEL"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"314-7teuvWcOcoyI0iSzWbFG4+aQ8Jc\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "x-powered-by",
+									"value": "Express"
+								},
+								{
+									"key": "x-render-origin-server",
+									"value": "Render"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "alt-svc",
+									"value": "h3=\":443\"; ma=86400"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": [\n        {\n            \"_id\": \"64e995646e875f04c584cef2\",\n            \"creator\": \"2cb9918d-25ea-429f-a014-a61247794c66\",\n            \"name\": \"Survey 1\",\n            \"description\": \"lorem ipsum\",\n            \"questions\": [\n                {\n                    \"question\": \"Do you think I will get a job?\",\n                    \"_id\": \"64e9959b6e875f04c584cef6\",\n                    \"responses\": [\n                        {\n                            \"answer\": true,\n                            \"respondent\": \"2cb9918d-25ea-429f-a014-a61247794c66\",\n                            \"_id\": \"64e995b26e875f04c584cefc\",\n                            \"createdAt\": \"2023-08-26T06:03:30.811Z\",\n                            \"updatedAt\": \"2023-08-26T06:03:30.811Z\"\n                        },\n                        {\n                            \"answer\": true,\n                            \"respondent\": \"248fe03d-8d4d-4812-8366-d2744504f186\",\n                            \"_id\": \"64e995bd6e875f04c584cf01\",\n                            \"createdAt\": \"2023-08-26T06:03:41.465Z\",\n                            \"updatedAt\": \"2023-08-26T06:03:41.465Z\"\n                        }\n                    ],\n                    \"createdAt\": \"2023-08-26T06:03:07.917Z\",\n                    \"updatedAt\": \"2023-08-26T06:03:41.466Z\"\n                }\n            ],\n            \"createdAt\": \"2023-08-26T06:02:12.182Z\",\n            \"updatedAt\": \"2023-08-26T06:03:41.466Z\",\n            \"__v\": 3\n        }\n    ]\n}"
+						}
+					]
+				}
+			],
+			"description": "Documentation for additional API endpoint that's here merely for convenience, feel free to ignore."
+		},
+		{
+			"name": "Required",
+			"item": [
+				{
+					"name": "Public",
+					"item": [
+						{
+							"name": "Authenticate User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "<username_here>",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "<password_here>",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}/auth",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"auth"
+									]
+								},
+								"description": "This Public API endpoint allows a user to authenticate with any arbitrary username & password. Any valid combination (non-empty) of username/password will result in a JWT token being created and set on an HTTP-only cookie which the client will return with every request."
+							},
+							"response": [
+								{
+									"name": "Authenticate User",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "username",
+													"value": "<username_here>",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "<password_here>",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseURL}}/auth",
+											"host": [
+												"{{baseURL}}"
+											],
+											"path": [
+												"auth"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Mon, 18 Sep 2023 11:50:01 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "80895d46481ce344-DEL"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"e8-lgqW6s2Li67Vag1B/i4CpsEYmoQ\""
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJiMTAyNGYyNy1kZWMxLTRjNzgtOWU4Yy1jM2NiZmE4YTFjMDQiLCJpYXQiOjE2OTUwMzc4MDEsImV4cCI6MTY5NTA0MTQwMX0.I2CekAnf8b32HvCaAR5e98C6tWvgJTa7DAINTU_NrFM; Max-Age=3600; Path=/; Expires=Mon, 18 Sep 2023 12:50:01 GMT; HttpOnly; Secure; SameSite=None"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "x-powered-by",
+											"value": "Express"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJiMTAyNGYyNy1kZWMxLTRjNzgtOWU4Yy1jM2NiZmE4YTFjMDQiLCJpYXQiOjE2OTUwMzc4MDEsImV4cCI6MTY5NTA0MTQwMX0.I2CekAnf8b32HvCaAR5e98C6tWvgJTa7DAINTU_NrFM\"\n    }\n}"
+								}
+							]
+						}
+					],
+					"description": "Public endpoints"
+				},
+				{
+					"name": "Protected",
+					"item": [
+						{
+							"name": "Create Survey",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Survey 2\",\r\n    \"description\": \"lorem ipsum\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/surveys",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"surveys"
+									]
+								},
+								"description": "This Protected API endpoint allows you to create a new survey with a name and description."
+							},
+							"response": [
+								{
+									"name": "Create Survey",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Survey 2\",\r\n    \"description\": \"lorem ipsum\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseURL}}/surveys",
+											"host": [
+												"{{baseURL}}"
+											],
+											"path": [
+												"surveys"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Tue, 19 Sep 2023 05:12:42 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "CF-Ray",
+											"value": "808f55cf299decc5-DEL"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"102-xvAkcsY289djxCWpFHqxW3SvH6c\""
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "x-powered-by",
+											"value": "Express"
+										},
+										{
+											"key": "x-render-origin-server",
+											"value": "Render"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"creator\": \"8c6b3542-6ae1-43bd-aa5c-f28c88b5a0ae\",\n        \"name\": \"Survey 2\",\n        \"description\": \"lorem ipsum\",\n        \"_id\": \"65092dca54ccf5868a51db77\",\n        \"questions\": [],\n        \"createdAt\": \"2023-09-19T05:12:42.322Z\",\n        \"updatedAt\": \"2023-09-19T05:12:42.322Z\",\n        \"__v\": 0\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "View Survey Results",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/surveys/:id",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"surveys",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<survey_id_here>"
+										}
+									]
+								},
+								"description": "This Protected API endpoint allows you to View the survey results given a valid survey ID."
+							},
+							"response": []
+						},
+						{
+							"name": "Create  Question on a Survey",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"question\": \"Do you think I will get a job?\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/surveys/:id/questions",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"surveys",
+										":id",
+										"questions"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<survey_id_here>"
+										}
+									]
+								},
+								"description": "This Protected API endpoint allows you to create a question on a survey using the survey ID and question text."
+							},
+							"response": []
+						},
+						{
+							"name": "Create  Answer on a Survey Question",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"answer\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/surveys/:id/questions/:questionId",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"surveys",
+										":id",
+										"questions",
+										":questionId"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<survey_id_here>"
+										},
+										{
+											"key": "questionId",
+											"value": "<question_id_here>"
+										}
+									]
+								},
+								"description": "This Protected API endpoint allows you to create an answer for a valid question belonging to a valid survey."
+							},
+							"response": []
+						}
+					],
+					"description": "Protected endpoints"
+				}
+			],
+			"description": "Documentation for the main endpoints that make up the surveys app backend."
+		},
+		{
+			"name": "External",
+			"item": [
+				{
+					"name": "Fetch Now Playing",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key={{TMDB_API_KEY}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"themoviedb",
+								"org"
+							],
+							"path": [
+								"3",
+								"movie",
+								"now_playing"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "en-US"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "api_key",
+									"value": "{{TMDB_API_KEY}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Fetch Now Playing",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key={{TMDB_API_KEY}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"themoviedb",
+										"org"
+									],
+									"path": [
+										"3",
+										"movie",
+										"now_playing"
+									],
+									"query": [
+										{
+											"key": "language",
+											"value": "en-US"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "api_key",
+											"value": "{{TMDB_API_KEY}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 21 Sep 2023 04:49:40 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "openresty"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "public, max-age=21600"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding,Accept-Encoding"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Cache",
+									"value": "Hit from cloudfront"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 0f9c6276b8393743263acfb7db85ab5a.cloudfront.net (CloudFront)"
+								},
+								{
+									"key": "X-Amz-Cf-Pop",
+									"value": "BOM54-P2"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=86400"
+								},
+								{
+									"key": "X-Amz-Cf-Id",
+									"value": "Fjr2GJyozFv9rMnt1r2ihe_CE0TMmI1jMFGpvHHkxhqDnItCJwyftg=="
+								},
+								{
+									"key": "Age",
+									"value": "1818"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"dates\": {\n        \"maximum\": \"2023-09-26\",\n        \"minimum\": \"2023-08-09\"\n    },\n    \"page\": 1,\n    \"results\": [\n        {\n            \"adult\": false,\n            \"backdrop_path\": \"/iIvQnZyzgx9TkbrOgcXx0p7aLiq.jpg\",\n            \"genre_ids\": [\n                27,\n                53\n            ],\n            \"id\": 1008042,\n            \"original_language\": \"en\",\n            \"original_title\": \"Talk to Me\",\n            \"overview\": \"When a group of friends discover how to conjure spirits using an embalmed hand, they become hooked on the new thrill, until one of them goes too far and unleashes terrifying supernatural forces.\",\n            \"popularity\": 2292.177,\n            \"poster_path\": \"/kdPMUMJzyYAc4roD52qavX0nLIC.jpg\",\n            \"release_date\": \"2023-07-26\",\n            \"title\": \"Talk to Me\",\n            \"video\": false,\n            \"vote_average\": 7.3,\n            \"vote_count\": 686\n        },\n        {\n            \"adult\": false,\n            \"backdrop_path\": \"/ctMserH8g2SeOAnCw5gFjdQF8mo.jpg\",\n            \"genre_ids\": [\n                35,\n                12,\n                14\n            ],\n            \"id\": 346698,\n            \"original_language\": \"en\",\n            \"original_title\": \"Barbie\",\n            \"overview\": \"Barbie and Ken are having the time of their lives in the colorful and seemingly perfect world of Barbie Land. However, when they get a chance to go to the real world, they soon discover the joys and perils of living among humans.\",\n            \"popularity\": 1899.184,\n            \"poster_path\": \"/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg\",\n            \"release_date\": \"2023-07-19\",\n            \"title\": \"Barbie\",\n            \"video\": false,\n            \"vote_average\": 7.3,\n            \"vote_count\": 4757\n        },\n        {\n            \"adult\": false,\n            \"backdrop_path\": \"/8pjWz2lt29KyVGoq1mXYu6Br7dE.jpg\",\n            \"genre_ids\": [\n                28,\n                878,\n                27\n            ],\n            \"id\": 615656,\n            \"original_language\": \"en\",\n            \"original_title\": \"Meg 2: The Trench\",\n            \"overview\": \"An exploratory dive into the deepest depths of the ocean of a daring research team spirals into chaos when a malevolent mining operation threatens their mission and forces them into a high-stakes battle for survival.\",\n            \"popularity\": 1804.581,\n            \"poster_path\": \"/4m1Au3YkjqsxF8iwQy0fPYSxE0h.jpg\",\n            \"release_date\": \"2023-08-02\",\n            \"title\": \"Meg 2: The Trench\",\n            \"video\": false,\n            \"vote_average\": 7,\n            \"vote_count\": 1823\n        },\n        {\n            \"adult\": false,\n            \"backdrop_path\": \"/53z2fXEKfnNg2uSOPss2unPBGX1.jpg\",\n            \"genre_ids\": [\n                27,\n                9648,\n                53\n            ],\n            \"id\": 968051,\n            \"original_language\": \"en\",\n            \"original_title\": \"The Nun II\",\n            \"overview\": \"In 1956 France, a priest is violently murdered, and Sister Irene begins to investigate. She once again comes face-to-face with a powerful evil.\",\n            \"popularity\": 1296.77,\n            \"poster_path\": \"/5gzzkR7y3hnY8AD1wXjCnVlHba5.jpg\",\n            \"release_date\": \"2023-09-06\",\n            \"title\": \"The Nun II\",\n            \"video\": false,\n            \"vote_average\": 6.7,\n            \"vote_count\": 229\n        },\n        {\n            \"adult\": false,\n            \"backdrop_path\": \"/c6Splshb8lb2Q9OvUfhpqXl7uP0.jpg\",\n            \"genre_ids\": [\n                28,\n                53\n            ],\n            \"id\": 717930,\n            \"original_language\": \"en\",\n            \"original_title\": \"Kandahar\",\n            \"overview\": \"After his mission is exposed, an undercover CIA operative stuck deep in hostile territory in Afghanistan must fight his way out, alongside his Afghan translator, to an extraction point in Kandahar, all whilst avoiding elite enemy forces and foreign spies tasked with hunting them down.\",\n            \"popularity\": 1206.966,\n            \"poster_path\": \"/lCanGgsqF4xD2WA5NF8PWeT3IXd.jpg\",\n            \"release_date\": \"2023-05-25\",\n            \"title\": \"Kandahar\",\n            \"video\": false,\n            \"vote_average\": 6.8,\n            \"vote_count\": 507\n        },\n        {\n            \"adult\": false,\n            \"backdrop_path\": \"/H6j5smdpRqP9a8UnhWp6zfl0SC.jpg\",\n            \"genre_ids\": [\n                28,\n                878,\n                12\n            ],\n            \"id\": 565770,\n            \"original_language\": \"en\",\n            \"original_title\": \"Blue Beetle\",\n            \"overview\": \"Recent college grad Jaime Reyes returns home full of aspirations for his future, only to find that home is not quite as he left it. As he searches to find his purpose in the world, fate intervenes when Jaime unexpectedly finds himself in possession of an ancient relic of alien biotechnology: the Scarab.\",\n            \"popularity\": 1007.105,\n            \"poster_path\": \"/vNfL4DYnonltukBrrgMmw94zMYL.jpg\",\n            \"release_date\": \"2023-08-16\",\n            \"title\": \"Blue Beetle\",\n            \"video\": false,\n            \"vote_average\": 7.2,\n            \"vote_count\": 541\n        },\n        {\n            \"adult\": false,\n            \"backdrop_path\": \"/jkKVLzLWjSvTnc84VzeljhSy6j8.jpg\",\n            \"genre_ids\": [\n                10749,\n                18\n            ],\n            \"id\": 820525,\n            \"original_language\": \"en\",\n            \"original_title\": \"After Everything\",\n            \"overview\": \"Besieged by writer’s block and the crushing breakup with Tessa, Hardin travels to Portugal in search of a woman he wronged in the past – and to find himself. Hoping to win back Tessa, he realizes he needs to change his ways before he can make the ultimate commitment.\",\n            \"popularity\": 650.272,\n            \"poster_path\": \"/gZLGCibvFY4zmt8sWUZcbBTHRtk.jpg\",\n            \"release_date\": \"2023-09-13\",\n            \"title\": \"After Everything\",\n            \"video\": false,\n            \"vote_average\": 6.4,\n            \"vote_count\": 27\n        },\n        {\n            \"adult\": false,\n            \"backdrop_path\": \"/waBWlJlMpyFb7STkFHfFvJKgwww.jpg\",\n            \"genre_ids\": [\n                28,\n                18\n            ],\n            \"id\": 678512,\n            \"original_language\": \"en\",\n            \"original_title\": \"Sound of Freedom\",\n            \"overview\": \"The story of Tim Ballard, a former US government agent, who quits his job in order to devote his life to rescuing children from global sex traffickers.\",\n            \"popularity\": 668.456,\n            \"poster_path\": \"/kSf9svfL2WrKeuK8W08xeR5lTn8.jpg\",\n            \"release_date\": \"2023-07-03\",\n            \"title\": \"Sound of Freedom\",\n            \"video\": false,\n            \"vote_average\": 8,\n            \"vote_count\": 458\n        },\n        {\n            \"adult\": false,\n            \"backdrop_path\": \"/iiXliCeykkzmJ0Eg9RYJ7F2CWSz.jpg\",\n            \"genre_ids\": [\n                28,\n                9648,\n                53,\n                80\n            ],\n            \"id\": 762430,\n            \"original_language\": \"en\",\n            \"original_title\": \"Retribution\",\n            \"overview\": \"When a mysterious caller puts a bomb under his car seat, Matt Turner begins a high-speed chase across the city to complete a specific series of tasks. With his kids trapped in the back seat and a bomb that will explode if they get out of the car, a normal commute becomes a twisted game of life or death as Matt follows the stranger's increasingly dangerous instructions in a race against time to save his family.\",\n            \"popularity\": 702.724,\n            \"poster_path\": \"/oUmmY7QWWn7OhKlcPOnirHJpP1F.jpg\",\n            \"release_date\": \"2023-08-23\",\n            \"title\": \"Retribution\",\n            \"video\": false,\n            \"vote_average\": 6.6,\n            \"vote_count\": 130\n        },\n        {\n            \"adult\": false,\n            \"backdrop_path\": \"/w2nFc2Rsm93PDkvjY4LTn17ePO0.jpg\",\n            \"genre_ids\": [\n                16,\n                35,\n                28\n            ],\n            \"id\": 614930,\n            \"original_language\": \"en\",\n            \"original_title\": \"Teenage Mutant Ninja Turtles: Mutant Mayhem\",\n            \"overview\": \"After years of being sheltered from the human world, the Turtle brothers set out to win the hearts of New Yorkers and be accepted as normal teenagers through heroic acts. Their new friend April O'Neil helps them take on a mysterious crime syndicate, but they soon get in over their heads when an army of mutants is unleashed upon them.\",\n            \"popularity\": 644.874,\n            \"poster_path\": \"/oupWWrVuCgNEa5GcjdkpjCYbx2X.jpg\",\n            \"release_date\": \"2023-07-31\",\n            \"title\": \"Teenage Mutant Ninja Turtles: Mutant Mayhem\",\n            \"video\": false,\n            \"vote_average\": 7.3,\n            \"vote_count\": 541\n        },\n        {\n            \"adult\": false,\n            \"backdrop_path\": \"/1HzL603WOer58xtnrRYdSIL5K04.jpg\",\n            \"genre_ids\": [\n                35,\n                12\n            ],\n            \"id\": 912908,\n            \"original_language\": \"en\",\n            \"original_title\": \"Strays\",\n            \"overview\": \"When Reggie is abandoned on the mean city streets by his lowlife owner, Doug, Reggie is certain that his beloved owner would never leave him on purpose. But once Reggie falls in with Bug, a fast-talking, foul-mouthed stray who loves his freedom and believes that owners are for suckers, Reggie finally realizes he was in a toxic relationship and begins to see Doug for the heartless sleazeball that he is.\",\n            \"popularity\": 479.903,\n            \"poster_path\": \"/n1hqbSCtyBAxaXEl1Dj3ipXJAJG.jpg\",\n            \"release_date\": \"2023-08-17\",\n            \"title\": \"Strays\",\n            \"video\": false,\n            \"vote_average\": 7.5,\n            \"vote_count\": 323\n        },\n        {\n            \"adult\": false,\n            \"backdrop_path\": \"/7I6VUdPj6tQECNHdviJkUHD2u89.jpg\",\n            \"genre_ids\": [\n                28,\n                53,\n                80\n            ],\n            \"id\": 603692,\n            \"original_language\": \"en\",\n            \"original_title\": \"John Wick: Chapter 4\",\n            \"overview\": \"With the price on his head ever increasing, John Wick uncovers a path to defeating The High Table. But before he can earn his freedom, Wick must face off against a new enemy with powerful alliances across the globe and forces that turn old friends into foes.\",\n            \"popularity\": 457.276,\n            \"poster_path\": \"/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg\",\n            \"release_date\": \"2023-03-22\",\n            \"title\": \"John Wick: Chapter 4\",\n            \"video\": false,\n            \"vote_average\": 7.8,\n            \"vote_count\": 4543\n        },\n        {\n            \"adult\": false,\n            \"backdrop_path\": \"/AeR5k8Sp3zc2Ql4tT6CmgqspsEq.jpg\",\n            \"genre_ids\": [\n                12,\n                10751,\n                14,\n                10749\n            ],\n            \"id\": 447277,\n            \"original_language\": \"en\",\n            \"original_title\": \"The Little Mermaid\",\n            \"overview\": \"The youngest of King Triton’s daughters, and the most defiant, Ariel longs to find out more about the world beyond the sea, and while visiting the surface, falls for the dashing Prince Eric. With mermaids forbidden to interact with humans, Ariel makes a deal with the evil sea witch, Ursula, which gives her a chance to experience life on land, but ultimately places her life – and her father’s crown – in jeopardy.\",\n            \"popularity\": 420.256,\n            \"poster_path\": \"/ym1dxyOk4jFcSl4Q2zmRrA5BEEN.jpg\",\n            \"release_date\": \"2023-05-18\",\n            \"title\": \"The Little Mermaid\",\n            \"video\": false,\n            \"vote_average\": 6.6,\n            \"vote_count\": 2047\n        },\n        {\n            \"adult\": false,\n            \"backdrop_path\": \"/fm6KqXpk3M2HVveHwCrBSSBaO0V.jpg\",\n            \"genre_ids\": [\n                18,\n                36\n            ],\n            \"id\": 872585,\n            \"original_language\": \"en\",\n            \"original_title\": \"Oppenheimer\",\n            \"overview\": \"The story of J. Robert Oppenheimer’s role in the development of the atomic bomb during World War II.\",\n            \"popularity\": 457.43,\n            \"poster_path\": \"/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg\",\n            \"release_date\": \"2023-07-19\",\n            \"title\": \"Oppenheimer\",\n            \"video\": false,\n            \"vote_average\": 8.3,\n            \"vote_count\": 3612\n        },\n        {\n            \"adult\": false,\n            \"backdrop_path\": \"/qEm4FrkGh7kGoEiBOyGYNielYVc.jpg\",\n            \"genre_ids\": [\n                53,\n                27\n            ],\n            \"id\": 635910,\n            \"original_language\": \"en\",\n            \"original_title\": \"The Last Voyage of the Demeter\",\n            \"overview\": \"The crew of the merchant ship Demeter attempts to survive the ocean voyage from Carpathia to London as they are stalked each night by a merciless presence onboard the ship.\",\n            \"popularity\": 430.191,\n            \"poster_path\": \"/nrtbv6Cew7qC7k9GsYSf5uSmuKh.jpg\",\n            \"release_date\": \"2023-08-09\",\n            \"title\": \"The Last Voyage of the Demeter\",\n            \"video\": false,\n            \"vote_average\": 7.4,\n            \"vote_count\": 632\n        },\n        {\n            \"adult\": false,\n            \"backdrop_path\": \"/9n2tJBplPbgR2ca05hS5CKXwP2c.jpg\",\n            \"genre_ids\": [\n                16,\n                10751,\n                12,\n                14,\n                35\n            ],\n            \"id\": 502356,\n            \"original_language\": \"en\",\n            \"original_title\": \"The Super Mario Bros. Movie\",\n            \"overview\": \"While working underground to fix a water main, Brooklyn plumbers—and brothers—Mario and Luigi are transported down a mysterious pipe and wander into a magical new world. But when the brothers are separated, Mario embarks on an epic quest to find Luigi.\",\n            \"popularity\": 423.687,\n            \"poster_path\": \"/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg\",\n            \"release_date\": \"2023-04-05\",\n            \"title\": \"The Super Mario Bros. Movie\",\n            \"video\": false,\n            \"vote_average\": 7.8,\n            \"vote_count\": 6651\n        },\n        {\n            \"adult\": false,\n            \"backdrop_path\": \"/2a9DvjXQQezV0sWqJbIN2mDLgZZ.jpg\",\n            \"genre_ids\": [\n                28,\n                18,\n                80\n            ],\n            \"id\": 1093485,\n            \"original_language\": \"cn\",\n            \"original_title\": \"掃毒3︰人在天涯\",\n            \"overview\": \"Hong Kong police agent Cheung (by Aaron Kwok) works undercover in Kang’s (by Sean Lau) drug cartel, while another undercover cop Au (by Louis Koo) successfully earns their trust in an incident, a brotherly-bond is built among the three. After the Police busts the syndicate in Hong Kong, Kang subsequently hides away in the Golden Triangle, by chance he receives a tip-off about the betrayal within his circle of trust…\",\n            \"popularity\": 382.772,\n            \"poster_path\": \"/kPjZsEni0KF0IXGXh0kaxNESdGE.jpg\",\n            \"release_date\": \"2023-07-06\",\n            \"title\": \"The White Storm 3: Heaven or Hell\",\n            \"video\": false,\n            \"vote_average\": 6.4,\n            \"vote_count\": 14\n        },\n        {\n            \"adult\": false,\n            \"backdrop_path\": \"/h0nmmdFAdBjQttN8Y0q825MWzZp.jpg\",\n            \"genre_ids\": [\n                28,\n                53,\n                80\n            ],\n            \"id\": 926393,\n            \"original_language\": \"en\",\n            \"original_title\": \"The Equalizer 3\",\n            \"overview\": \"Robert McCall finds himself at home in Southern Italy but he discovers his friends are under the control of local crime bosses. As events turn deadly, McCall knows what he has to do: become his friends' protector by taking on the mafia.\",\n            \"popularity\": 362.757,\n            \"poster_path\": \"/b0Ej6fnXAP8fK75hlyi2jKqdhHz.jpg\",\n            \"release_date\": \"2023-08-30\",\n            \"title\": \"The Equalizer 3\",\n            \"video\": false,\n            \"vote_average\": 6.9,\n            \"vote_count\": 203\n        },\n        {\n            \"adult\": false,\n            \"backdrop_path\": \"/3mrli3xsGrAieQks7KsBUm2LpCg.jpg\",\n            \"genre_ids\": [\n                28,\n                80,\n                53\n            ],\n            \"id\": 979275,\n            \"original_language\": \"en\",\n            \"original_title\": \"Mob Land\",\n            \"overview\": \"A sheriff tries to keep the peace when a desperate family man violently robs a pill mill with his brother-in-law, alerting an enforcer for the New Orleans mafia.\",\n            \"popularity\": 367.028,\n            \"poster_path\": \"/mcz8oi9oCgq1wkA3Wz2kluE94pE.jpg\",\n            \"release_date\": \"2023-08-04\",\n            \"title\": \"Mob Land\",\n            \"video\": false,\n            \"vote_average\": 5.9,\n            \"vote_count\": 20\n        },\n        {\n            \"adult\": false,\n            \"backdrop_path\": \"/qZOuoBoKCDLSm1EvYz2eBub8Cto.jpg\",\n            \"genre_ids\": [\n                16,\n                12,\n                14,\n                10751\n            ],\n            \"id\": 939338,\n            \"original_language\": \"fr\",\n            \"original_title\": \"Pattie et la colère de Poséidon\",\n            \"overview\": \"An adventurous mouse sets off to battle dangerous creatures in Ancient Greece, including Poseidon.\",\n            \"popularity\": 325.654,\n            \"poster_path\": \"/gVPw9gRPsZZhzY6cIXp6h6nep5M.jpg\",\n            \"release_date\": \"2023-01-25\",\n            \"title\": \"Epic Tails\",\n            \"video\": false,\n            \"vote_average\": 7,\n            \"vote_count\": 28\n        }\n    ],\n    \"total_pages\": 92,\n    \"total_results\": 1840\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "https://survey-app-backend-c8bl.onrender.com/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "TMDB_API_KEY",
+			"value": "1d766cba1c7489d1cdbf59d7275b2be2",
+			"type": "string"
+		}
+	]
+}
