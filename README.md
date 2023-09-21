@@ -2,6 +2,5 @@
 
 ### This repo exists just to test the API Integration functionality of the WiseGPT VSCode extension.
 
-## Env variables
-
-### REACT_APP_TMDB_API_KEY=<your_api_key>
+constants/apiUrls.js file is having wrong value for the variable BASE_URL because it's a postman environment variable.
+Seeks manual changes.
