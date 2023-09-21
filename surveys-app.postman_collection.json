@@ -518,7 +518,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key={{TMDB_API_KEY}}",
+							"raw": "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key={{REACT_APP_TMDB_API_KEY}}",
 							"protocol": "https",
 							"host": [
 								"api",
@@ -541,7 +541,7 @@
 								},
 								{
 									"key": "api_key",
-									"value": "{{TMDB_API_KEY}}"
+									"value": "{{REACT_APP_TMDB_API_KEY}}"
 								}
 							]
 						}
@@ -553,7 +553,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key={{TMDB_API_KEY}}",
+									"raw": "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key={{REACT_APP_TMDB_API_KEY}}",
 									"protocol": "https",
 									"host": [
 										"api",
@@ -576,7 +576,7 @@
 										},
 										{
 											"key": "api_key",
-											"value": "{{TMDB_API_KEY}}"
+											"value": "{{REACT_APP_TMDB_API_KEY}}"
 										}
 									]
 								}
@@ -627,7 +627,7 @@
 								},
 								{
 									"key": "Via",
-									"value": "1.1 0f9c6276b8393743263acfb7db85ab5a.cloudfront.net (CloudFront)"
+									"value": "1.1 755d6f33909f51691c8588f6502f4084.cloudfront.net (CloudFront)"
 								},
 								{
 									"key": "X-Amz-Cf-Pop",
@@ -639,11 +639,11 @@
 								},
 								{
 									"key": "X-Amz-Cf-Id",
-									"value": "Fjr2GJyozFv9rMnt1r2ihe_CE0TMmI1jMFGpvHHkxhqDnItCJwyftg=="
+									"value": "3mBjl8ngZhAIR91XwivnFnoJKnXukTnaAP5vx-OBM9wx6qTBpqApMA=="
 								},
 								{
 									"key": "Age",
-									"value": "1818"
+									"value": "4189"
 								}
 							],
 							"cookie": [],
@@ -681,7 +681,7 @@
 			"type": "string"
 		},
 		{
-			"key": "TMDB_API_KEY",
+			"key": "REACT_APP_TMDB_API_KEY",
 			"value": "1d766cba1c7489d1cdbf59d7275b2be2",
 			"type": "string"
 		}
