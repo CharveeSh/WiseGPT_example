@@ -1,4 +1,4 @@
-import { AUTH_URL } from '../constants/apiUrls';
+import { AUTH_URL, SURVEY_URL } from '../constants/apiUrls';
 
 export const apiCall = (url, method, body = null, headers = {}) => {
   return fetch(url, {
@@ -22,4 +22,11 @@ export const apiCall = (url, method, body = null, headers = {}) => {
 
 export const authenticateUser = (username, password) => {
   return apiCall(AUTH_URL, 'POST', { username, password });
+};
+
+export const createSurvey = (name, description) => {
+  return apiCall(SURVEY_URL, "POST", {
+    name,
+    description
+  });
 };

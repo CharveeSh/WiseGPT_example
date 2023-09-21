@@ -2,5 +2,5 @@
 
 ### This repo exists just to test the API Integration functionality of the WiseGPT VSCode extension.
 
-constants/apiUrls.js file is having wrong value for the variable BASE_URL because it's a postman environment variable.
-Seeks manual changes.
+Installed axios, then generated create survey logic using wiseGPT, it generated working code but without using axios. 
+If I now want to use axios, I must either delete existing files/functions/folders generated previously by wiseGPT OR modify the logic I never wrote myself in the first place.
